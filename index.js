@@ -118,11 +118,18 @@ async function contractCall(func, args, value) {
     return calledSet;
 }
 
+// Shows the register Form
+$('#newregister').click(async function(){
+  $('#formbody').show();
+})
 
 
 
 
-window.addEventListener('load', async () => {
+window.addEventListener('DOMContentLoaded', async () => {
+
+
+  $('#formBody').hide();
     
     $("#loading-bar-spinner").show();
 
@@ -153,14 +160,12 @@ window.addEventListener('load', async () => {
             price: property.price
         })
 
-        // vote
-        //   $(function () {
-        //     $("i").click(function () {
-        //       $("i,span").toggleClass("press", 1000);
-        //     });
-        //   });
-        // }
+
         renderLand();
+
+
+        $('#formBody').show();
+
         $("#loading-bar-spinner").hide();
     }
 });
