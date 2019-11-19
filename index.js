@@ -73,10 +73,8 @@ var client = null;
 var LandLength = 0;
 
 
-function renderProduct() {
-    LandArray = LandArray.sort(function (a, b) {
-        return b.Price - a.Price
-    })
+function renderLand() {
+    
     var template = $('#template').html();
 
     Mustache.parse(template);
@@ -162,7 +160,7 @@ window.addEventListener('load', async () => {
         //     });
         //   });
         // }
-        renderProduct();
+        renderLand();
         $("#loading-bar-spinner").hide();
     }
 });
@@ -196,7 +194,7 @@ $('.regBtns').click(async function(){
   })
 
 
-  renderProduct();
+  renderLand();
   
   //   //This will clear the value in all scenarious
   //   var name_input = document.getElementById("name")
