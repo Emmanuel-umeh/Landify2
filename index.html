@@ -60,9 +60,7 @@
 
 <!-- Loader animation -->
 
-<div id="loading-bar-spinner" class="svg"><img src="loader.svg">
-	<div><b>LOADING</b></div>
-</div>
+<div class="loading">Loading&#8230;</div>
 
 
 
@@ -217,6 +215,8 @@
 							</div>
 						</div>
 					</div>
+					<!-- Map location of the land -->
+					<div id ="map"> </div>
 				</div>
 			</div>
 
@@ -240,6 +240,9 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
 		integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
 	</script>
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=b69413a6-5931-4bc5-8886-4a0569fae10b&callback=initMap">
+	</script>
 
 
 	<script src="assets/js/jquery.backstretch.min.js"></script>
@@ -251,6 +254,9 @@
 	
 	
 	<script src="index.js"></script>
+	<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initMap">
+</script>
 	<script src="assets/js/loader.js"></script>
 
 

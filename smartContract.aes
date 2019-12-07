@@ -1,4 +1,4 @@
-contract LandRegistration =
+payable contract LandRegistration =
   
     
   record landDetails = 
@@ -10,7 +10,9 @@ contract LandRegistration =
     image2 : string,
     description : string,
     price : int,
-    timestamp : int
+    timestamp : int,
+    coordinateX : int,
+    coordinateY : int
     }
     
   record state = {
@@ -30,7 +32,7 @@ contract LandRegistration =
     
     //Registers a Land
     
-  payable stateful entrypoint createLand( image1' : string, image2' : string, name' : string, description' : string, price' : int) = 
+  payable stateful entrypoint createLand( image1' : string, image2' : string, name' : string, description' : string, price' : int, coordinateX' : int, coordinateY' : int) = 
     let timestamp = Chain.timestamp
     let landReg = {
       id = getLandLength()+1,
@@ -41,7 +43,9 @@ contract LandRegistration =
       
       description = description',
       price= price',
-      timestamp = timestamp}
+      timestamp = timestamp,
+      coordinateX = coordinateX',
+      coordinateY = coordinateY' }
     
     let index = getLandLength() + 1
     put(state{lands[index] = landReg, landLength = index})
@@ -50,14 +54,8 @@ contract LandRegistration =
     //returns lenght of lands registered
   entrypoint getLandLength() : int = 
     state.landLength
+
+//   
+
+
     
-  //price of land
-    
-  entrypoint getPrice(index : int) = 
-    state.lands[index].price
-    
-    
-    
-  entrypoint getId(index : int) = 
-      state.lands[index].id
-      

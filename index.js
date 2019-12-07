@@ -1,5 +1,5 @@
 const contractSource = `
-contract LandRegistration =
+payable contract LandRegistration =
   
     
   record landDetails = 
@@ -11,7 +11,9 @@ contract LandRegistration =
     image2 : string,
     description : string,
     price : int,
-    timestamp : int
+    timestamp : int,
+    coordinateX : int,
+    coordinateY : int
     }
     
   record state = {
@@ -31,7 +33,7 @@ contract LandRegistration =
     
     //Registers a Land
     
-  payable stateful entrypoint createLand( image1' : string, image2' : string, name' : string, description' : string, price' : int) = 
+  payable stateful entrypoint createLand( image1' : string, image2' : string, name' : string, description' : string, price' : int, coordinateX' : int, coordinateY' : int) = 
     let timestamp = Chain.timestamp
     let landReg = {
       id = getLandLength()+1,
@@ -42,7 +44,9 @@ contract LandRegistration =
       
       description = description',
       price= price',
-      timestamp = timestamp}
+      timestamp = timestamp,
+      coordinateX = coordinateX',
+      coordinateY = coordinateY' }
     
     let index = getLandLength() + 1
     put(state{lands[index] = landReg, landLength = index})
@@ -51,17 +55,11 @@ contract LandRegistration =
     //returns lenght of lands registered
   entrypoint getLandLength() : int = 
     state.landLength
+
+//   
+
+
     
-  //price of land
-    
-  entrypoint getPrice(index : int) = 
-    state.lands[index].price
-    
-    
-    
-  entrypoint getId(index : int) = 
-      state.lands[index].id
-      
 
   
     `;
@@ -131,7 +129,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   $('#formBody').hide();
     
-    $("#loading-bar-spinner").show();
+    $(".loading").show();
 
     client = await Ae.Aepp()
 
@@ -166,13 +164,13 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         $('#formBody').show();
 
-        $("#loading-bar-spinner").hide();
+        $(".loading").hide();
     }
 });
 
 
 $('.regBtns').click(async function(){
-  $("#loading-bar-spinner").show();
+  $(".loading").show();
   console.log("Button Clicked")
   const land_name = ($('#Regname').val());
   const land_image1 = ($("#Regimg").val());
@@ -214,8 +212,21 @@ $('.regBtns').click(async function(){
   //      image_input.value = ""
   // // e.preventDefault();
 
-  $("#loading-bar-spinner").hide();
+  $(".loading").hide();
   location.reload(true);
 
 });
+
+
+function initMap() {
+  // The location of Land
+  var uluru = {lat: -5.344, lng: 131.036};
+  // The map, centered at Land
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 8, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+
+
 
