@@ -199,18 +199,6 @@ $('.regBtns').click(async function(){
 
   renderLand();
   
-  //   //This will clear the value in all scenarious
-  //   var name_input = document.getElementById("name")
-  //       name_input.value =""
-  //   var image_input = document.getElementById("image1")
-  //       url_input.value =""
-  //   var image_input = document.getElementById("image2")
-  //      image_input.value = ""
-  //   var image_input = document.getElementById("image3")
-  //      image_input.value = ""
-  //   var image_input = document.getElementById("message")
-  //      image_input.value = ""
-  // // e.preventDefault();
 
   $(".loading").hide();
   location.reload(true);
@@ -218,15 +206,15 @@ $('.regBtns').click(async function(){
 });
 
 
-// function initMap() {
-//   // The location of Land
-//   var uluru = {lat: -5.344, lng: 131.036};
-//   // The map, centered at Land
-//   var map = new google.maps.Map(
-//       document.getElementById('map'), {zoom: 8, center: uluru});
-//   // The marker, positioned at Uluru
-//   var marker = new google.maps.Marker({position: uluru, map: map});
-// }
+function initMap() {
+  // The location of Land
+  var uluru = {lat: -5.344, lng: 131.036};
+  // The map, centered at Land
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 8, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
 
 
 
