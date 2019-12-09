@@ -208,7 +208,9 @@ $('.regBtns').click(async function(){
 
     name: new_land.name,
     description: new_land.description,
-    price: new_land.price
+    price: new_land.price,
+    xCordinate : new_land.xCordinate,
+    yCordinate : new_land.yCordinate
   })
 
 
