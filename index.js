@@ -155,7 +155,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         renderLand();
 
-        function initMap() {
+        // function initMap() {
           // The location of Land
           var uluru = {lat: -5.344, lng: 131.036};
           // The map, centered at Land
@@ -163,7 +163,7 @@ window.addEventListener('DOMContentLoaded', async () => {
               document.getElementById('map'), {zoom: 8, center: uluru});
           // The marker, positioned at Uluru
           var marker = new google.maps.Marker({position: uluru, map: map});
-        }
+        // }
 
 
         $('#formBody').show();
