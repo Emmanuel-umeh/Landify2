@@ -185,13 +185,20 @@ $('.regBtns').click(async function(){
   const land_image2 = ($("#Regimg2").val());
   const land_price = ($("#Regprice").val());
   const land_description = ($("#Regdescription").val());
+  const xCordinate = ($("#coordinateX").val());
+  const yCordinate = ($("#coordinateY").val());
+
+
   console.log("-------------------------------------")
   console.log("Name:",land_name)
   console.log("image1:",land_image1)
   console.log("Image2:",land_image2)
+  console.log(xCordinate)
+  console.log(yCordinate)
+
   
 
-  const new_land = await contractCall('createLand', [land_image1, land_image2, land_name,land_description, land_price],parseInt(land_price, 10));
+  const new_land = await contractCall('createLand', [land_image1, land_image2, land_name,land_description, land_price, xCordinate, yCordinate],parseInt(land_price, 10));
   console.log("SAVED TO THE DB", new_land)
 
   LandArray.push({
@@ -208,7 +215,7 @@ $('.regBtns').click(async function(){
   renderLand();
   
 
-  $(".loading").hide();
+  $(".loading").hide(); 
   location.reload(true);
 
 });
