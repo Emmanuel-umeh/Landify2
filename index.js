@@ -149,7 +149,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 
             name: property.name,
             description: property.description,
-            price: property.price
+            price: property.price,
+            xCordinate : property.coordinateX,
+            yCordinate : property.coordinateY
         })
 
 
