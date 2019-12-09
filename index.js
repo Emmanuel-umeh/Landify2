@@ -155,15 +155,15 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         renderLand();
 
-        function initMap() {
-          // The location of Land
-          var uluru = {lat: -5.344, lng: 131.036};
-          // The map, centered at Land
-          var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 8, center: uluru});
-          // The marker, positioned at Uluru
-          var marker = new google.maps.Marker({position: uluru, map: map});
-          }
+        const mapDisplayElement = document.getElementById('map');
+        // The address is Uluru
+        // Run the initMap() function imidiately, 
+        (initMap = () => {
+          const address = {lat: -25.344, lng: 131.036};
+          // The zoom property specifies the zoom level for the map. Zoom: 0 is the lowest zoom,and displays the entire earth.
+          const map = new google.maps.Map(mapDisplayElement, { zoom: 4, center: address });
+          const marker = new google.maps.Marker({ position: address, map });
+        })();
 
         
 
