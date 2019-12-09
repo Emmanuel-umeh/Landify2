@@ -216,7 +216,7 @@ $('.regBtns').click(async function(){
 
 });
 
-$('#body').on('click', '#location', async function(event){
+$('#body').on('click', '.location', async function(event){
   console.log("location button clicked")
   dataIndex  = event.target.id
   console.log(dataIndex)
