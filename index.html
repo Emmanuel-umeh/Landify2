@@ -260,19 +260,10 @@
 
 	
 	
-	<script src="index.js"></script>
-	<script src="assets/js/loader.js"></script>
-	<script>
-	function initMap() {
-		// The location of Land
-		var uluru = {lat: -5.344, lng: 131.036};
-		// The map, centered at Land
-		var map = new google.maps.Map(
-			document.getElementById('map'), {zoom: 8, center: uluru});
-		// The marker, positioned at Uluru
-		var marker = new google.maps.Marker({position: uluru, map: map});
-	  }</script>
 	
+	<script src="assets/js/loader.js"></script>
+	
+	<script src="index.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBY0qQ189OqoQJGvg4YWEbXjnGL7WMYaek&callback=initMap"
     async defer></script>
 
