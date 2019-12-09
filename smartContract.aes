@@ -54,8 +54,3 @@ payable contract LandRegistration =
     //returns lenght of lands registered
   entrypoint getLandLength() : int = 
     state.landLength
-
-//   
-
-
-    

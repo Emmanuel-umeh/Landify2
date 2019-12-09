@@ -55,17 +55,11 @@ payable contract LandRegistration =
     //returns lenght of lands registered
   entrypoint getLandLength() : int = 
     state.landLength
-
-//   
-
-
-    
-
   
     `;
 
 
-const contractAddress = 'ct_qZUCTGGB3Hij1ZJT42XWSDanR1sUACY4d9CxidLbE17HC6Mnw';
+const contractAddress = 'ct_9ZgNgkF61QCAwm7D8bNf5Usa5pGFsiZ1p5X6daCWsdHamPbC4';
 var LandArray = [];
 var client = null;
 var LandLength = 0;
