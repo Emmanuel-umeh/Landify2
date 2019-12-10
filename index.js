@@ -228,7 +228,7 @@ $('#body').on('click', '.location', async function(event){
 
   console.log("position"+dataIndex)
 
-  const mapDisplayElement = document.getElementById('map');
+  const mapDisplayElement = document.getElementById('map' +dataIndex);
         // The address is Uluru
         // Run the initMap() function imidiately, 
         (initMap = () => {
