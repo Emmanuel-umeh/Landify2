@@ -223,7 +223,7 @@ $('#body').on('click', '.location', async function(event){
   required  = await callStatic('getLand', [dataIndex])
   console.log("Y coordinate" , required.coordinateY)
 
-  const mapDisplayElement = document.getElementById('position' + dataIndex);
+  const mapDisplayElement = document.getElementById(dataIndex);
         // The address is Uluru
         // Run the initMap() function imidiately, 
         (initMap = () => {
