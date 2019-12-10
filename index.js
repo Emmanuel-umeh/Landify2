@@ -142,6 +142,8 @@ window.addEventListener('DOMContentLoaded', async () => {
 
         LandArray.push({
             id: property.id,
+            ids: property.id,
+
             creatorAddress: property.creatorAddress,
             image1: property.image1,
             image2: property.image2,
@@ -197,6 +199,7 @@ $('.regBtns').click(async function(){
 
   LandArray.push({
     id: LandArray.length + 1,
+    ids: LandArray.length + 1,
     image1: new_land.image1,
     image2: new_land.image2,
 
@@ -225,7 +228,7 @@ $('#body').on('click', '.location', async function(event){
 
   console.log("position"+dataIndex)
 
-  const mapDisplayElement = document.getElementById("position"+dataIndex);
+  const mapDisplayElement = document.getElementById('map');
         // The address is Uluru
         // Run the initMap() function imidiately, 
         (initMap = () => {
