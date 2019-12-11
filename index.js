@@ -226,11 +226,10 @@ $('#body').on('click', '.location', async function(event){
   required  = await callStatic('getLand', [dataIndex])
   console.log("Y coordinate" , required.coordinateY)
 
-  console.log("position"+dataIndex)
+  // console.log("position"+dataIndex)
 
-  const mapDisplayElement = document.getElementById('map2');
-        // The address is Uluru
-        // Run the initMap() function imidiately, 
+  const mapDisplayElement = document.getElementById('maps');
+       
         (initMap = () => {
           const address = {lat: required.coordinateX, lng: required.coordinateY};
           // The zoom property specifies the zoom level for the map. Zoom: 0 is the lowest zoom,and displays the entire earth.
